@@ -44,7 +44,6 @@ function removerProduto(id) {
             return
         }        
     }
-    
 }
 removerProduto(1)
 listarProduto()
