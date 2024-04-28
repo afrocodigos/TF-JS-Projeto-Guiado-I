@@ -1,32 +1,44 @@
-//lógica aqui
+//Criando um Estoque de sneakers
 
-//inicia uma lista vazia
-let estoque = []
 
-let proximoId = 1; 
+let estoque = [];
 
-//C => CRIAR 
-function adicionarProduto(nome, quantidade, preco, descricao) {
-        let produto = {
-            id: proximoId++,
-            nome: nome, 
-            quantidade: quantidade, 
-            preco: preco,
-            descricao: descricao
-        }
-        estoque.push(produto)
+let proximoId = 1;
+
+// C --> Criando
+
+function adicionarProduto(marca, modelo, quantidade, preco){
+    let produto = {
+        id: proximoId++,
+        marca: marca,
+        modelo: modelo,
+        quantidade: quantidade,
+        preco: preco,
+    }
+
+    estoque.push(produto)
 }
 
-// R(READ) => LER
+
+let novoProduto1 = adicionarProduto("Nike", "Air Force", "15", "450");
+let novoProduto2 = adicionarProduto("Adidas", "ADI2000", "10", "800");
+let novoProduto3 = adicionarProduto("Vans", "Old-Skol", "8", "650");
+
+
+//R --> Lendo
+
 function listarProduto(){
-    for(let i=0; i < estoque.length; i++){
+    for(let i = 0; i < estoque.length; i++){
         let produto = estoque[i];
-        console.log("continuando", produto)
+        console.log("Em estoque", produto)
     }
 }
 
+listarProduto()
 
-// U => Atualizar
+
+// U --> Atualizando
+
 function atualizarProduto (id, informacaoAtualizada) {
 	for (let i = 0; i < estoque.length ; i++) {
 		if (estoque[i].id === id) {
@@ -36,7 +48,7 @@ function atualizarProduto (id, informacaoAtualizada) {
     }
 }
 
-// D => Deletar
+// D => Deletando
 function removerProduto(id){
     for(let i = 0; i < estoque.length; i++){
         if(estoque[i].id === id){
@@ -47,15 +59,13 @@ function removerProduto(id){
     }
 }
 
-let novoProduto1 = adicionarProduto("Tênis", "30", "12.00", "Tênis da marca Afrocódigos");
-let novoProduto2 = adicionarProduto("Tênis", "30", "12.00", "Tênis da marca Afrocódigos");
-let novoProduto3 = adicionarProduto("Tênis", "30", "12.00", "Tênis da marca Afrocódigos");
-let novoProduto4 = adicionarProduto("Tênis", "30", "12.00", "Tênis da marca Afrocódigos");
-let novoProduto5 = adicionarProduto("Tênis", "30", "12.00", "Tênis da marca Afrocódigos");
+
+removerProduto(1);
+
+listarProduto();
+
+let novoProduto4 = adicionarProduto("Puma", "Suede", "4", "550");
 
 
-listarProduto()
+listarProduto();
 
-removerProduto(3)
-
-listarProduto()
