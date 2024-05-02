@@ -8,18 +8,19 @@
 
 </head>
 <body>
-    <h1>Sistema de Estoque de Produtos</h1>
+    <h1>Quem vai pro CHURRASCO? &#127830;&#128293;
+    </h1>
 
     <div id="form">
-        <input type="text" id="nome" placeholder="Nome do Produto">
-        <input type="number" id="quantidade" placeholder="Quantidade">
-        <input type="number" id="preco" placeholder="Preço">
-        <input type="text" id="descricao" placeholder="Descrição">
-        <button onclick="adicionarNovoProduto()">Adicionar Produto</button>
+        <input type="text" id="nome" placeholder="Nome da pessoa">
+        <input type="text" id="quantidade" placeholder="Vai levar o que? (ex: 1 kilo de linguiça de frango)">
+        <input type="number" id="preco" placeholder="Valor em R$ da contribuição para a bebida, valor minimo de R$ 5,00. ">
+        <input type="text" id="descricao" placeholder="+ informações">
+        <button onclick="adicionarNovoProduto()">Adicionar na Lista</button>
     </div>
 
     <div id="produtos">
-        <h2>Produtos no Estoque:</h2>
+        <h2>Listão:</h2>
         <ul id="lista-produtos"></ul>
     </div>
 
@@ -33,7 +34,7 @@
         // Função para adicionar um novo produto ao estoque
         function adicionarNovoProduto() {
             let nome = document.getElementById('nome').value;
-            let quantidade = parseInt(document.getElementById('quantidade').value);
+            let quantidade = document.getElementById('quantidade').value;
             let preco = parseFloat(document.getElementById('preco').value);
             let descricao = document.getElementById('descricao').value;
             
@@ -66,7 +67,7 @@
             for (let i = 0; i < estoque.length; i++) {
                 let produto = estoque[i];
                 let li = document.createElement('li');
-                li.textContent = `${produto.id}: ${produto.nome} - ${produto.quantidade} unidades - R$ ${produto.preco.toFixed(2)}`;
+                li.textContent = `${produto.id}: ${produto.nome} vai levar ${produto.quantidade} e vai contribuir com R$ ${produto.preco.toFixed(2)} para a vakinha da bebida `;
                 
                 let botaoRemover = document.createElement('button');
                 botaoRemover.textContent = 'Remover';
