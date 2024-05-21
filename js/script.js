@@ -1,11 +1,7 @@
-//lógica aqui
-
-//inicia uma lista vazia
 let estoque = []
 
 let proximoId = 1; 
 
-//C => CRIAR 
 function adicionarProduto(nome, quantidade, preco, descricao) {
         let produto = {
             id: proximoId++,
@@ -17,7 +13,6 @@ function adicionarProduto(nome, quantidade, preco, descricao) {
         estoque.push(produto)
 }
 
-// R(READ) => LER
 function listarProduto(){
     for(let i=0; i < estoque.length; i++){
         let produto = estoque[i];
@@ -26,7 +21,6 @@ function listarProduto(){
 }
 
 
-// U => Atualizar
 function atualizarProduto (id, informacaoAtualizada) {
 	for (let i = 0; i < estoque.length ; i++) {
 		if (estoque[i].id === id) {
@@ -36,7 +30,6 @@ function atualizarProduto (id, informacaoAtualizada) {
     }
 }
 
-// D => Deletar
 function removerProduto(id){
     for(let i = 0; i < estoque.length; i++){
         if(estoque[i].id === id){
@@ -47,15 +40,15 @@ function removerProduto(id){
     }
 }
 
-let novoProduto1 = adicionarProduto("Tênis", "30", "12.00", "Tênis da marca Afrocódigos");
-let novoProduto2 = adicionarProduto("Tênis", "30", "12.00", "Tênis da marca Afrocódigos");
-let novoProduto3 = adicionarProduto("Tênis", "30", "12.00", "Tênis da marca Afrocódigos");
-let novoProduto4 = adicionarProduto("Tênis", "30", "12.00", "Tênis da marca Afrocódigos");
-let novoProduto5 = adicionarProduto("Tênis", "30", "12.00", "Tênis da marca Afrocódigos");
+let novoProduto1 = adicionarProduto("Tênis", "20", "12.00", "Tênis da marca Afrocódigos");
+let novoProduto2 = adicionarProduto("Tênis", "20", "12.00", "Tênis da marca Afrocódigos");
+let novoProduto3 = adicionarProduto("Tênis", "20", "12.00", "Tênis da marca Afrocódigos");
+let novoProduto4 = adicionarProduto("Tênis", "20", "12.00", "Tênis da marca Afrocódigos");
+let novoProduto5 = adicionarProduto("Tênis", "20", "12.00", "Tênis da marca Afrocódigos");
 
 
 listarProduto()
 
-removerProduto(3)
+removerProduto()
 
 listarProduto()
