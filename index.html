@@ -68,17 +68,38 @@
                 let li = document.createElement('li');
                 li.textContent = `${produto.id}: ${produto.nome} - ${produto.quantidade} unidades - R$ ${produto.preco.toFixed(2)}`;
                 
-                let botaoRemover = document.createElement('button');
-                botaoRemover.textContent = 'Remover';
+             let botaoRemover = document.createElement('button');
+                let botaoatualizar = document.createElement('button_1');
+
+               botaoRemover.textContent = 'Remover';
+                botaoatualizar.textContent = 'Atualizar';
+
                 botaoRemover.onclick = function() {
                     removerProduto(produto.id);
+                   listarProdutos();
+                };
+                botaoatualizar.onclick = function() {
+                    
+                    atualizarProduto(produto.id,produto);
                     listarProdutos();
                 };
 
+                li.appendChild(botaoatualizar);
                 li.appendChild(botaoRemover);
                 listaProdutos.appendChild(li);
+              
             }
         }
+        // Função para ATUALIZAR um produto do estoque
+        function atualizarProduto (id, informacaoAtualizada) {
+	    for (let i = 0; i < estoque.length ; i++) {
+		if (estoque[i].id === id) {
+        	estoque[i] = Object.assign(estoque[i], informacaoAtualizada)
+          break;
+        }
+        // falta mais funcionalidades 
+    }
+}
 
         // Função para remover um produto do estoque
         function removerProduto(id) {

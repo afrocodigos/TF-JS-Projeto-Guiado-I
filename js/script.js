@@ -54,8 +54,6 @@ let novoProduto4 = adicionarProduto("Tênis", "30", "12.00", "Tênis da marca Af
 let novoProduto5 = adicionarProduto("Tênis", "30", "12.00", "Tênis da marca Afrocódigos");
 
 
-listarProduto()
-
-removerProduto(3)
-
+let dados ={n:"camisa",q:20, v:129.00,d:"pais"}
+atualizarProduto(3,dados)
 listarProduto()
